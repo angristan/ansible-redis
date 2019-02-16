@@ -1,0 +1,11 @@
+---
+
+- name: Install Redis
+  apt:
+    name: redis-server
+
+- name: Ensure Redis is running and enabled on boot.
+  service:
+    name: redis-server
+    state: started
+    enabled: true

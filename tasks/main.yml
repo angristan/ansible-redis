@@ -4,6 +4,12 @@
   apt:
     name: redis-server
 
+- name: Enable memory overcommit
+  sysctl:
+    name: vm.overcommit_memory
+    value: 1
+    reload: yes
+
 - name: Ensure Redis is running and enabled on boot.
   service:
     name: redis-server
